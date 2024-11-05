@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- call cairo font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- call font-awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <!-- call css file -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- start header -->
+      <div class="header">
+        <h3 class="logo"><a href="#home">Omar</a></h3>
+        <i
+          id="list"
+          class="fa-solid fa-bars"
+          style="font-size: 40px; color: rgb(237, 237, 237)"
+        ></i>
+        <ul id="ul">
+          <li class="link"><a href="#home">Home</a></li>
+          <li class="link"><a href="#about">About Me</a></li>
+          <li class="link"><a href="#my-work">My Work</a></li>
+          <li class="link"><a href="#contact">Contact</a></li>
+        </ul>
+        <script>
+          let list = document.getElementById("list");
+          let ul = document.getElementById("ul");
+
+          document.addEventListener("click", (event) => {
+            if (list.classList.contains("close")) {
+              if (!list.contains(event.target)) {
+                ul.style.display = "none";
+                list.className = "fa-solid fa-bars";
+              }
+            }
+          });
+          window.addEventListener("resize", () => {
+            if (window.innerWidth >= 768) {
+              ul.style.display = "flex";
+              list.className = "fa-solid fa-bars";
+            } else {
+              ul.style.display = "none";
+              list.className = "fa-solid fa-bars";
+            }
+          });
+          list.onclick = function () {
+            if (list.classList.contains("close")) {
+              ul.style.display = "none";
+              list.className = "fa-solid fa-bars";
+            } else {
+              ul.style.display = "flex";
+              list.className = "close fa-solid fa-circle-xmark";
+            }
+          };
+        </script>
+      </div>
+      <!-- end header -->
+
+      <!-- start home -->
+      <div class="home" id="home">
+        <div class="hire">
+          <h1>
+            Awesome <br />
+            <span>Front-end</span> Developer
+          </h1>
+          <button>
+            <a
+              target="_blank"
+              href="https://api.whatsapp.com/send/?phone=201553824848"
+              >Hire Me</a
+            >
+          </button>
+          <img src="imgs/Vector 187.png" alt="" class="arrow" />
+        </div>
+        <div class="img">
+          <img src="imgs/Group 2346-20.png" alt="" />
+          <img
+            class="background"
+            src="imgs/doodles mixed round-20.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <!-- end home -->
+
+      <!-- start About -->
+      <div class="about" id="about">
+        <div class="text">
+          <h1>About <span>me</span></h1>
+          <p class="less" style="display: block">
+            I am a passionate Front-End Developer currently in a training
+            program with Code Alpha. With a foundation in HTML, CSS, and
+            JavaScript, I am excited to continue expanding my skills and
+            knowledge in web development. Although I am still a beginner, I am
+            driven by a love for this field and the opportunity it offers for a
+            better life and a meaningful career...
+          </p>
+          <p class="more" style="display: none">
+            I am a passionate Front-End Developer currently in a training
+            program with Code Alpha. With a foundation in HTML, CSS, and
+            JavaScript, I am excited to continue expanding my skills and
+            knowledge in web development. Although I am still a beginner, I am
+            driven by a love for this field and the opportunity it offers for a
+            better life and a meaningful career. I am constantly learning and
+            exploring new ideas, staying updated with the latest trends in
+            technology. My curiosity and dedication to improvement push me to
+            grow, making me enthusiastic about every project I work on.
+          </p>
+          <span id="more">Read More</span>
+        </div>
+        <div class="img">
+          <img src="imgs/Group 62-20.png" alt="" />
+        </div>
+        <script>
+          let less = document.querySelector(".less");
+          let more = document.querySelector(".more");
+          let show = document.getElementById("more");
+          show.addEventListener("click", function () {
+            if (show.innerText == "Read More") {
+              less.style.display = "none";
+              more.style.display = "block";
+              show.innerHTML = `Read Less`;
+            } else {
+              more.style.display = "none";
+              less.style.display = "block";
+              show.innerHTML = "Read More";
+            }
+          });
+        </script>
+      </div>
+      <!-- end About -->
+
+      <!-- start my work -->
+      <div class="my-work" id="my-work">
+        <div class="text">
+          <h2>Look At <span>This</span></h2>
+          <img class="arrow2" src="imgs/Vector 186-20.png" alt="" />
+          <button>
+            <a
+              href="https://github.com/omarmkram2005?tab=repositories"
+              target="_blank"
+              >Git Hub</a
+            >
+          </button>
+        </div>
+        <div class="projects">
+          <div class="project">
+            <div class="image">
+              <img class="image" src="imgs/pro1.PNG" alt="" />
+            </div>
+            <div class="describe" style="display: none">
+              <i class="close fa-solid fa-circle-xmark"></i>
+              <h3>HTML, CSS, and JavaScript Quiz App</h3>
+              <p>
+                A quiz app with 60 questions in each category (HTML, CSS, and
+                JavaScript). It randomly selects 10 questions from the chosen
+                category. Built using HTML, CSS, and JavaScript.
+              </p>
+              <button>
+                <a
+                  target="_blank"
+                  href="https://omarmkram2005.github.io/HTML-Css-Js-Quiz/"
+                  >Try It</a
+                >
+              </button>
+              <button>
+                <a
+                  target="_blank"
+                  href="https://github.com/omarmkram2005/HTML-Css-Js-Quiz"
+                  >View Code</a
+                >
+              </button>
+            </div>
+          </div>
+          <div class="project">
+            <div class="image">
+              <img class="image" src="imgs/pro2.PNG" alt="" />
+            </div>
+            <div class="describe" style="display: none">
+              <i class="close fa-solid fa-circle-xmark"></i>
+              <h3>Web Gallery</h3>
+              <p>
+                An app with two options: "View Our Collection," which displays
+                really cool cat pictures, or "Upload," which allows you to
+                upload up to 25 images. Note that the images are not actually
+                uploaded to a server—they are only displayed from your device,
+                so they will disappear if you reload the page.
+              </p>
+              <button>
+                <a
+                  target="_blank"
+                  href="https://omarmkram2005.github.io/CodeAlpha_Images-Gallery-App/"
+                  >Try It</a
+                >
+              </button>
+              <button>
+                <a
+                  target="_blank"
+                  href="https://github.com/omarmkram2005/CodeAlpha_Images-Gallery-App"
+                  >View Code</a
+                >
+              </button>
+            </div>
+          </div>
+          <div class="project">
+            <div class="image">
+              <img src="imgs/pro3.PNG" alt="" />
+            </div>
+            <div class="describe" style="display: none">
+              <i class="close fa-solid fa-circle-xmark"></i>
+              <h3>Cool Page</h3>
+              <p>
+                It’s a cool page template provided by Elzero from Elzero Web
+                School as one of four end-of-course CSS tasks. It was full of
+                creative ideas and presented a good challenge at the time, made
+                using only CSS and HTML.
+              </p>
+              <button>
+                <a
+                  target="_blank"
+                  href="https://omarmkram2005.github.io/elzero-temp3/"
+                  >Try It</a
+                >
+              </button>
+              <button>
+                <a
+                  target="_blank"
+                  href="https://github.com/omarmkram2005/elzero-temp3"
+                  >View Code</a
+                >
+              </button>
+            </div>
+          </div>
+          <script>
+            let project = document.querySelectorAll(".image");
+            let close = document.querySelectorAll(".close");
+
+            Array.from(project).forEach((pro) => {
+              pro.addEventListener("click", (prd) => {
+                let describe = pro.nextElementSibling;
+                if (describe) {
+                  describe.style.display = "block";
+                } else {
+                }
+              });
+            });
+            Array.from(close).forEach((clo) => {
+              clo.addEventListener("click", () => {
+                let describe = clo.parentElement;
+                if (describe) {
+                  describe.style.display = "none";
+                } else {
+                }
+              });
+            });
+          </script>
+        </div>
+      </div>
+
+      <!-- end my work -->
+
+      <!-- start contact -->
+      <div class="contact" id="contact">
+        <h3>Contact Me</h3>
+        <div class="links">
+          <a
+            target="_blank"
+            href="https://api.whatsapp.com/send/?phone=201553824848"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/omar-mkram-81048231b/"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+      <!-- end contact -->
+    </div>
+  </body>
+</html>
